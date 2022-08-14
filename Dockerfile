@@ -4,6 +4,6 @@ COPY Procfile ./Procfile
 COPY CHECKS ./CHECKS
 
 USER root
-RUN groupadd -g 1001 docker && gpasswd -a airflow docker
+RUN groupadd -g $DOCKER_GID docker && gpasswd -a airflow docker
 
 USER airflow
